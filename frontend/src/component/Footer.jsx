@@ -1,12 +1,12 @@
 import React from 'react'
 import Logo from '../assets/logo.png'
-import Facebook from '../assets/facebook.png'
-import Twitter from '../assets/twitter.png'
-import Instagram from '../assets/instagram.png'
-import Email from '../assets/email.png'
-import Location from '../assets/location.png'
-import Contact from '../assets/contact.png'
-import { Link , href } from "react-router";
+import Facebook from './../assets/footer/facebook.png'
+import Twitter from './../assets/footer/twitter.png'
+import Instagram from './../assets/footer/instagram.png'
+import Email from './../assets/footer/email.png'
+import Location  from './../assets/footer/location.png'
+import Calling from './../assets/footer/calling.png'
+import { Link } from "react-router";
 
 
 const Footer = () => {
@@ -23,7 +23,7 @@ const Footer = () => {
             url: 'https://www.twitter.com/'
         },
         {
-            name: Instagra,
+            name: Instagram,
             alt: 'Instagram',
             url: 'https://www.instagram.com/'
         },
@@ -32,7 +32,7 @@ const Footer = () => {
             alt: 'Email',
             url: 'mailto:info@agrimart.com'
         }
-    ]
+    ];
 
     const contactDetails = [
         {
@@ -42,7 +42,7 @@ const Footer = () => {
         },
 
         {    
-            icon: Contact,
+            icon: Calling,
             alt : 'Contact Us',
             href: 'https://maps.app.goo.gl/PjnAu7sv8ukzt1xb8',
         },
@@ -53,7 +53,7 @@ const Footer = () => {
             href: 'mailto:info@agrimart.com',
         }
 
-    ],
+    ];
 
     const services = [
         { name: 'Essentials', href: '/essentials', },
@@ -61,7 +61,7 @@ const Footer = () => {
         { name: 'Fruits', href: '/fruits', },
         { name: 'Exotics', href: '/exotics', },
         { name: 'Dairy', href: '/dairy', }
-    ],
+    ];
 
     const quickLinks = [
         { name: 'Home', path: '/Home', },
@@ -69,35 +69,66 @@ const Footer = () => {
         { name: 'About Us', path: '/services' },
         { name: 'Contact Us', path: '/Home', },
         { name: 'feedback', path: '/services' },
-    ]
+    ];
 
   return (
+    <>
     <footer>
-       <div>
+       <div className='flex bg-green-800'>
+
+          <div className=''>
+           <span><img src={Logo} className='w-64' alt="Logo" /> </span>
+           <p className='w-50'>Discover pure, organic goodness at Agrimart where fresh, wholesome products come straight from nature to you.</p>
+          </div>
+
+           <div>
+             <h1 className='font-bold text-lg'>Our Services</h1>
+             <ul>
+                {services.map((service,index) => (
+                <li key={index}> 
+                    <Link to={service.href}>{service.name}</Link> 
+                </li>
+                ))}
+             </ul>
+          </div>
+
+           <div>
+             <h3>Useful Links</h3>
+             <ul>
+                {quickLinks.map((link,index)=>(
+                    <li key={index}>
+                        <Link to={link.path}> {link.name} </Link>
+                    </li>
+                ))}
+             </ul>
+          </div>
+
+           <div>
+             <h3>Contact Us</h3>
+             <ul>
+                {contactDetails.map((contact,index) => (
+                    <li key={index}>
+                         <img src={contact.icon} alt={contact.alt}/><a href={contact.href} target="_blank" rel="noopener noreferrer">
+                            {contact.alt}
+                         </a>
+                    </li>
+                ))}
+             </ul>
+          </div>
 
           <div>
-           <span><img src={Logo} alt="Logo" /> </span>
-           
-           <p>Discover pure, organic goodness at Agrimart—where fresh, wholesome products come straight from nature to you.</p>
-          </div>
-
-           <div>
-            
-          </div>
-
-           <div>
-            
-          </div>
-
-           <div>
-            
+                <h3> Follow Us</h3>
+                {socialMediaLinks.map((social,index) => (
+                <a href={social.url} target="_blank" rel="noopener noreferrer"> 
+                    <img src={social.name} alt={social.alt} />
+                </a>
+                ))}
           </div>
           
        </div>
 
-
     </footer>
-    
+    </>
   )
 }
 
