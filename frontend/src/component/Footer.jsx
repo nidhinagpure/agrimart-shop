@@ -1,10 +1,13 @@
 import React from 'react'
+import Logo from '../assets/logo.png'
 import Facebook from '../assets/facebook.png'
 import Twitter from '../assets/twitter.png'
-import Instagra from '../assets/instagram.png'
+import Instagram from '../assets/instagram.png'
 import Email from '../assets/email.png'
 import Location from '../assets/location.png'
-import { href } from 'react-router'
+import Contact from '../assets/contact.png'
+import { Link , href } from "react-router";
+
 
 const Footer = () => {
         
@@ -54,10 +57,10 @@ const Footer = () => {
 
     const services = [
         { name: 'Essentials', href: '/essentials', },
-        { name: 'Vegetables', href: '/essentials', },
-        { name: 'Fruits', href: '/essentials', },
-        { name: 'Exotics', href: '/essentials', },
-        { name: 'Dairy', href: '/essentials', }
+        { name: 'Vegetables', href: '/vegetables', },
+        { name: 'Fruits', href: '/fruits', },
+        { name: 'Exotics', href: '/exotics', },
+        { name: 'Dairy', href: '/dairy', }
     ],
 
     const quickLinks = [
@@ -68,21 +71,33 @@ const Footer = () => {
         { name: 'feedback', path: '/services' },
     ]
 
-
-
-
-
-
   return (
-    <>
     <footer>
        <div>
-        
+
+          <div>
+           <span><img src={Logo} alt="Logo" /> </span>
+           
+           <p>Discover pure, organic goodness at Agrimart—where fresh, wholesome products come straight from nature to you.</p>
+          </div>
+
+           <div>
+            
+          </div>
+
+           <div>
+            
+          </div>
+
+           <div>
+            
+          </div>
+          
        </div>
+
+
     </footer>
     
-
-    </>
   )
 }
 
