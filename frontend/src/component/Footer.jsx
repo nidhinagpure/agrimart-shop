@@ -34,19 +34,16 @@ const Footer = () => {
             alt : 'Argimart Pune',
             href: 'https://maps.app.goo.gl/PjnAu7sv8ukzt1xb8',
         },
-
         {    
             icon: Calling,
             alt : 'Contact Us',
             href: 'https://maps.app.goo.gl/PjnAu7sv8ukzt1xb8',
         },
-
         {
             icon: Email,
             alt : 'Gmail Us',
             href: 'mailto:info@agrimart.com',
         }
-
     ];
 
     const services = [
@@ -58,7 +55,7 @@ const Footer = () => {
     ];
 
     const quickLinks = [
-        { name: 'Home', path: '/Home', },
+        { name: 'Home', path: '/', },
         { name: 'Services', path: '/Home', },
         { name: 'About Us', path: '/services' },
         { name: 'Contact Us', path: '/Home', },
@@ -67,20 +64,19 @@ const Footer = () => {
 
   return (
     <>
-    <footer>
-       <div className='flex bg-green-800 justify-between gap-30 px-6 py-16 pb-34 mb-0 mt-20'>
- 
+    <footer className='bg-green-800 text-gray-300 px-6 sm:px-10 py-10'>
+       <div className=' max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 justify-content-center flex gap-10'>
         <div className=''>
-            <span><img src={Logo} className='w-60 ' alt="Logo" /></span>
-            <p className='w-60 line-clamp-10 text-left ml-6'>
+            <span><img src={Logo} className='w-44 sm:w-56' alt="Logo" /></span>
+            <p className='text-sm text-left mt-4 leading-6'>
             Discover pure, organic goodness at Agrimart where fresh, wholesome products come straight from nature to you.</p>
         </div>
 
         <div>
-            <h1 className='font-medium text-xl py-1'>Our Services</h1>
+            <h1 className='font-semibold text-lg sm:text-xl mb-3'>Our Services</h1>
             <ul>
             {services.map((service,index) => (
-            <li key={index} className='text-md py-1'> 
+            <li key={index} className='py-1 text-sm sm:text-base'> 
                 <Link to={service.href}>{service.name}</Link> 
             </li>
             ))}
@@ -88,57 +84,56 @@ const Footer = () => {
         </div>
 
         <div>
-            <h3 className='font-medium text-xl py-1'>Useful Links</h3>
+            <h3 className='font-semibold text-lg sm:text-xl mb-3'>Useful Links</h3>
             <ul>
             {quickLinks.map((link,index)=>(
-                <li key={index} className='text-md py-1'>
+                <li key={index} className='py-1 text-sm sm:text-base'>
                     <Link to={link.path}>{link.name} </Link>
                 </li>
             ))}
             </ul>
         </div>
 
-        <div className=''>
-            <h3 className='font-medium text-xl py-1'>Contact Us</h3>
+        <div>
+            <h3 className='font-semibold text-lg sm:text-xl mb-3'>Contact Us</h3>
             <ul className=''>
             {contactDetails.map((contact,index) => (
-                <li key={index}>
-                 <div className='flex py-1'>
-                   <img src={contact.icon} className='w-6 h-6' alt={contact.alt}/>
-                    <a href={contact.href} target="_blank" rel="noopener noreferrer">  <p className='px-3'>{contact.alt} </p></a>
+                <li key={index} className='py-2'>
+                 <div className='flex items-center gap-3'>
+                   <img src={contact.icon} className='w-5 h-5 sm:w-6 sm:h-6' alt={contact.alt}/>
+                    <a href={contact.href} target="_blank" rel="noopener noreferrer">  <p className='text-sm sm:text-base'>{contact.alt} </p></a>
                  </div>    
                 </li>
             ))}
             </ul>
         </div>
 
-        <div className='gap-8 pr-6'>
-        <h3 className='font-medium text-xl py-1'>Follow Us</h3>
-        <div className='flex gap-4 py-1'>
+        <div>
+        <h3 className='font-semibold text-lg sm:text-xl mb-3'>Follow Us</h3>
+        <div className='flex flex-wrap gap-4'>
             {socialMediaLinks.map((social,index) => (
             <a href={social.url} key={index} target="_blank" rel="noopener noreferrer"> 
                <img src={social.name} className='w-6 h-6' alt={social.alt} /></a>
-                ))}
+            ))}
         </div>
       </div>    
-  
        </div>
 
-         <div className='w-7xl bg-gray-300 items-center mx-auto py-2 flex justify-between px-12 mt-[-6%]'>
-          <p>© 2024 All rights reserved Agrimart</p>
-          <div className='flex gap-4'>
+        <div className='max-w-7xl mx-auto mt-10 bg-gray-300 text-black rounded-md px-4 sm:px-8
+              py-4 flex flex-col sm:flex-row items-center justify-between gap-4'>
+            <p className='text-sm text-center sm:text-left'>© 2024 All rights reserved Agrimart</p>
+        <div className='flex gap-4'>
           {socialMediaLinks.map((social,index)=>(
                 <a href={social.url} key={index} target="_blank" rel="noopener noreferrer">
-                    <img  src={social.name} className='w-6 h-6' alt={social.alt} />
+                    <img  src={social.name} className='w-6 h-6 bg-gray-500 p-1 rounded-sm' alt={social.alt} />
                 </a> 
             ))}
-            </div>
-         </div>
+        </div>
 
+         </div>
     </footer>
     </>
   )
 }
 
 export default Footer
-
