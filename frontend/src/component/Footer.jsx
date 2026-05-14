@@ -8,7 +8,6 @@ import Location  from './../assets/footer/location.png'
 import Calling from './../assets/footer/calling.png'
 import { Link } from "react-router";
 
-
 const Footer = () => {
         
     const socialMediaLinks = [
@@ -69,7 +68,7 @@ const Footer = () => {
   return (
     <>
     <footer>
-       <div className='flex bg-green-800 justify-between gap-30 px-6 py-16 pb-34 mb-0 mt-20 w-full'>
+       <div className='flex bg-green-800 justify-between gap-30 px-6 py-16 pb-34 mb-0 mt-20'>
  
         <div className=''>
             <span><img src={Logo} className='w-60 ' alt="Logo" /></span>
@@ -124,7 +123,6 @@ const Footer = () => {
       </div>    
   
        </div>
-
 
          <div className='w-7xl bg-gray-300 items-center mx-auto py-2 flex justify-between px-12 mt-[-6%]'>
           <p>© 2024 All rights reserved Agrimart</p>
